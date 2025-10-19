@@ -1,19 +1,79 @@
-# React + Vite
+# Student Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based student management dashboard that allows you to create, view, edit and delete student records.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View list of students with their details (name, email, age)
+- Add new students 
+- Edit existing student information
+- Delete students
+- Modern UI with Tailwind CSS
+- API integration with backend
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React 19
+- Vite 7
+- Tailwind CSS 4
+- ESLint 9
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+1. Clone the repository
+2. Install dependencies:
+```sh
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# week3-mernstack-express--useState-
+3. Create a `.env` file in the root directory with:
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+4. Start the development server:
+```sh
+npm run dev
+```
+
+## Project Structure
+
+```
+student-dashboard/
+├── src/
+│   ├── components/     # React components
+│   │   ├── Header.jsx
+│   │   ├── Home.jsx 
+│   │   ├── StudentCard.jsx
+│   │   └── StudentForm.jsx
+│   ├── lib/           # Utility functions
+│   │   └── api.js     # API integration
+│   ├── App.jsx        # Root component
+│   └── main.jsx       # Entry point
+├── public/            # Static assets
+└── index.html
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## API Integration
+
+The dashboard connects to a backend API with the following endpoints:
+
+- GET `/api/students` - Fetch all students
+- POST `/api/students` - Create new student
+- PUT `/api/students/:id` - Update student
+- DELETE `/api/students/:id` - Delete student
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
