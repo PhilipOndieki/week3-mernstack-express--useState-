@@ -39,7 +39,7 @@ export default function Home(){
 
     return(
         <main>
-            <StudentForm onSubmit='handleAdd'/>
+            <StudentForm onSubmit={handleAdd}/>
             {loading&& <p>Loading...</p>}
             {error&& <p className='text-red-600'>{error}</p>}
             {students.map(s=> 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-export default function StudentForm(){
+export default function StudentForm({ onSubmit }){
     const [form, setForm] = useState({name: '', email: '', age: ''});
     
     const handleChange = e => {
@@ -29,20 +29,20 @@ export default function StudentForm(){
                 className='border rounded-lg px-3 py-2 flex-1'/>
                 
             <input 
-                name='name'
+                name='email'
                 value={form.email}
                 onChange={handleChange}
                 placeholder='Email'
                 className='border rounded-lg px-3 py-2 flex-1'/>
 
             <input
-                name='name'
+                name='age'
                 value={form.age}
                 onChange={handleChange}
                 placeholder='Age'
                 className='border rounded-lg px-3 py-2 flex-1'/>
                 
-                <button className='bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700'></button>
+                <button className='bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700'>Add Student</button>
         </form>
     );
 }

@@ -13,9 +13,9 @@ export default function StudentCard({ student, onEdit, onDelete}){
                         <p className='text-slate-600 text-sm'>{student.email}</p>
                         <p className='text-slate-600 text-sm'>Age: {student.age}</p>
                     </div>
-                    <div classname='flex gap-2'>
-                        <button onCLick={()=> setEdit(true)} className='border px-3 py-1 rounded-lg text-sm'>Edit</button>
-                        <button onCLick={()=> onDelete(student._id)} className='bg-red-600 text-white px-3 py-1 rounded-lg text-sm'>Delete</button>
+                    <div className='flex gap-2'>
+                        <button onClick={()=> setEdit(true)} className='border px-3 py-1 rounded-lg text-sm'>Edit</button>
+                        <button onClick={()=> onDelete(student._id)} className='bg-red-600 text-white px-3 py-1 rounded-lg text-sm'>Delete</button>
                     </div>
                 </div>
             ):(
@@ -27,12 +27,12 @@ export default function StudentCard({ student, onEdit, onDelete}){
 
                     <input 
                     className='border rounded-lg px-3 py-1 w-full'
-                    value={draft.name}
+                    value={draft.email}
                     onChange={e=> setDraft ({ ...draft, email:e.target.value})}/>
 
                     <input 
                     className='border rounded-lg px-3 py-1 w-full'
-                    value={draft.name}
+                    value={draft.age}
                     onChange={e=> setDraft ({ ...draft, age:Number(e.target.value)})}/>
 
                     <div>
