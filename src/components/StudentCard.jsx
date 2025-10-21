@@ -7,7 +7,7 @@ export default function StudentCard({ student, onEdit, onDelete}){
     return(
         <div className='rounded-xl border bg-white p-4 shadow-sm'>
             {!edit ? (
-                <div className='flex justify-beteween'>
+                <div className='flex justify-between'>
                     <div>
                         <h3 className='text-lg font-semibold'>{student.name}</h3>
                         <p className='text-slate-600 text-sm'>{student.email}</p>
@@ -19,9 +19,9 @@ export default function StudentCard({ student, onEdit, onDelete}){
                     </div>
                 </div>
             ):(
-                <form>
+                <form form onSubmit={(e)=>{ e.preventDefault(); onEdit(draft); setEdit(false); }}>
                     <input 
-                        className='border rounded-lg px-3 py-1 w-full'
+                        className='border rounded-lg px-3 py-1 w-full mb-2'
                         value={draft.name}
                         onChange={e=> setDraft ({ ...draft, name:e.target.value})}/>
 
